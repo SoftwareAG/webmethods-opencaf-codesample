@@ -29,6 +29,10 @@ The OpenCAF code sample illustrates the most important base functionality availa
 * For common components used by My webMethods server, see the caf_h tags.
 * For standardized tags, go to the UI Tags > JSF Standard Tags menu. These tags use the JSF 2.x AJAX refresh feature as well.
 * In addition, there is a category that displays each of the renderers you can use for the generation of specific content such as posts, shells or properties.
+
+___
     
 These tools are provided as-is and without warranty or support. They do not constitute part of the Software AG product suite. Users are free to use, fork and modify them, subject to the license agreement. While Software AG welcomes contributions, we cannot guarantee to include every contribution in the master project.
+
+___
 
