@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:caf_h="http://webmethods.com/jsf/caf/html"
+	xmlns:caf_f="http://webmethods.com/jsf/caf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+	<ui:composition template="/templates/page_with_syntaxhighlighter.xhtml">
+		<ui:param name="pageTitle" value="UI Tags > f > viewAction" />
+		<ui:define name="body">
+			<f:view>
+				<f:metadata> 
+					<f:viewParam name="username" value="#{fakeUserBean.username}" ></f:viewParam>
+					<f:viewParam name="pw" value="#{fakeUserBean.password}"></f:viewParam>
+					<f:viewAction if="#{not empty param.username || not empty param.pw}" action="#{fakeUserBean.checkPassWordLength}"></f:viewAction>
+				</f:metadata>
+				<h:messages></h:messages>
+				<h:outputText value="User Name: #{fakeUserBean.username}"></h:outputText>
+				<br/>
+				<h:outputText value="Password: #{fakeUserBean.password}" />
+			</f:view>
+			
+			<br/>
+			<h:form >
+				
+				<h4>Links</h4>
+				<h:panelGrid columns="4" width="60%">
+					<h:link value="viewAction.xhtml?username=jungle&amp;pw=fever" outcome="viewAction.xhtml?username=jungle&amp;pw=fever" />
+					<h:link value="viewAction.xhtml?username=jungle" outcome="viewAction?username=jungle" onclick="this.search = this.search + '&amp;pw=';"/>
+					<h:link value="viewAction.xhtml?pw=fever" outcome="viewAction.xhtml?pw=fever" onclick="this.search = this.search + '&amp;username=';" /> 
+					<h:link value="viewAction.xhtml?username=jungle&amp;pw=tiny" outcome="viewAction?username=jungle&amp;pw=tiny" />
+				</h:panelGrid>
+			</h:form>
+			<div>
+				<br /> f:metadata tag must be in the top level xhtml file. The included
+				viewAction.xhtml is purely for displaying the code. <br/> To add view params to links add <span style="font-family: monospace; font-size: 1.3em;">includeViewParams="true"</span> attribute.
+			</div>
+
+			<h4 class="sourcetabbox">Source</h4>
+			<div class="sourcetabbox">
+				<caf_h:form id="tabsform">
+					<caf_h:toggleTabs id="sourceTabs" value="xhtml">
+						<caf_f:selectItem id="xhtmlItem" itemValue="xhtml" itemLabel="viewAction.xhtml" />
+						<caf_f:selectItem id="javaItem1" itemValue="java1" itemLabel="FakeUser.java"/>
+					</caf_h:toggleTabs>
+					<caf_h:panelHideable id="xhtml" showEffect="Effect.Appear">
+						<pre class="brush:xhtml;toolbar:false;highlight:[11]">#{samplesBean.webResource("/controls/f/samples/viewAction.xhtml")}</pre>
+					</caf_h:panelHideable>
+					<caf_h:panelHideable id="java1" showEffect="Effect.Appear">
+                        <pre class="brush:java;toolbar:false;highlight:[#{samplesBean.csvForRange(42,57)}]">#{samplesBean.cpResource("/caf/war/wm_opencaf_showcase/controls/h/FakeUser.java")}</pre>
+                    </caf_h:panelHideable>
+				</caf_h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

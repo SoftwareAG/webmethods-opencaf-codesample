@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:form id="hSelectManyMenuForm">
+		<h:messages />
+		<h:selectManyMenu value="#{selectInputBean.values}" class="input10">
+			<f:selectItems value="#{selectInputBean.fruitItems}" />
+		</h:selectManyMenu>
+		
+		<h:commandButton action="#{selectInputBean.doAction}" id="submit" value="Submit" style="display:block;">
+			<f:ajax render="hSelectManyMenuForm" execute="hSelectManyMenuForm"/>
+		</h:commandButton>
+	</h:form>
+</ui:composition>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:caf_h="http://webmethods.com/jsf/caf/html"
+    xmlns:caf_f="http://webmethods.com/jsf/caf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+    <ui:composition template="/templates/page_with_syntaxhighlighter.xhtml">
+	        <ui:param name="pageTitle" value="UI Tags > f > valueChangeListener" />
+	        <ui:define name="body">
+	        <div style="width:100%">
+				<div style="float:left; width:40%; min-height:100px;">
+					<span>First Technique: valueChangeListener attribute</span><br />
+					<br />
+					<ui:include src="samples/valueChangeListenerAttribute.xhtml" />
+					<br/>
+					View valueChangeListenerAttribute.xhtml and CountryBean.java for code.
+				</div>
+				<div style="float:left; width:40%; min-height:100px;">
+					<span>Second Technique: valueChangeListener interface </span><br />
+					<br />
+					<ui:include src="samples/valueChangeListenerInterface.xhtml" />
+					<br/>
+					View valueChangeListenerInterface.xhtml and MyValueChangeListener.java for code.
+				</div>
+	        </div>
+	        <div style="clear:both"/>
+
+			
+            <h4 class="sourcetabbox">Source</h4>
+            <div class="sourcetabbox">
+                <caf_h:form id="tabsform">
+	                <caf_h:toggleTabs id="sourceTabs" value="xhtml1">
+	                    <caf_f:selectItem id="xhtmlItem1" itemValue="xhtml1" itemLabel="valueChangeListenerAttribute.xhtml" />
+	                    <caf_f:selectItem id="javaItem1" itemValue="java1" itemLabel="CountryBean.java"/>
+	                    <caf_f:selectItem id="xhtmlItem2" itemValue="xhtml2" itemLabel="valueChangeListenerInterface.xhtml" />
+	                    <caf_f:selectItem id="javaItem2" itemValue="java2" itemLabel="MyValueChangeListener.java"/>
+	                </caf_h:toggleTabs>
+	                <caf_h:panelHideable id="xhtml1" showEffect="Effect.Appear">
+	                    <pre class="brush:xhtml;toolbar:false;highlight:[9]">#{samplesBean.webResource("/controls/f/samples/valueChangeListenerAttribute.xhtml")}</pre>
+	                </caf_h:panelHideable>
+	                <caf_h:panelHideable id="java1" showEffect="Effect.Appear">
+                        <pre class="brush:java;toolbar:false;highlight:[8,21,22,19,20]">#{samplesBean.cpResource("/caf/war/wm_opencaf_showcase/controls/h/CountryBean.java")}</pre>
+                    </caf_h:panelHideable>
+	                <caf_h:panelHideable id="xhtml2" showEffect="Effect.Appear">
+	                    <pre class="brush:xhtml;toolbar:false;highlight:[9]">#{samplesBean.webResource("/controls/f/samples/valueChangeListenerInterface.xhtml")}</pre>
+	                </caf_h:panelHideable>
+	                <caf_h:panelHideable id="java2" showEffect="Effect.Appear">
+                        <pre class="brush:java;toolbar:false;highlight:[8,11,12,13,14]">#{samplesBean.cpResource("/caf/war/wm_opencaf_showcase/controls/h/MyValueChangeListener.java")}</pre>
+                    </caf_h:panelHideable>
+	            </caf_h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

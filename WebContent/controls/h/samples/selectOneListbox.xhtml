@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:form id="hSelectListBoxForm">
+		<h:messages />
+		<h:selectOneListbox id="hselectListbox" value="#{selectInputBean.value}">
+			<f:selectItems value="#{selectInputBean.fruitItems}" />
+		</h:selectOneListbox>
+		
+		<h:commandButton action="#{selectInputBean.doAction2}" id="submit" value="Submit" style="display:block;">
+			<f:ajax render="hSelectListBoxForm" execute="hSelectListBoxForm"/>
+		</h:commandButton>
+	</h:form>
+</ui:composition>
