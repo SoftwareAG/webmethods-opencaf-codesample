@@ -18,7 +18,7 @@ The OpenCAF code sample illustrates the most important base functionality availa
 
 ### OpenCAF Application Installation Steps
 
-1. Import the attached wm_opencaf_showcase.zip file into Software AG Designer.
+1. Import the component showcase files into Software AG Designer.
 
 2. Publish the showcase to My webMethods Server.
 
