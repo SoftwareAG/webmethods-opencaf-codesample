@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:caf_h="http://webmethods.com/jsf/caf/html"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <caf_h:form id="form">
+
+        <button onclick="return sayHi();">Say Hi</button>
+
+        <caf_h:scriptBlock id="script1" value="function sayHi() {
+    var hello = &quot;hi world&quot;;
+    CAF.Dialog.alert('Running script from script block: ' + hello);
+    return false;
+}"/>
+
+    </caf_h:form>
+
+</ui:composition>
